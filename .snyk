@@ -1,4 +1,6 @@
-version: v1.5.2
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:node-uuid:20160328':
     - node-uuid:
@@ -7,8 +9,14 @@ ignore:
   'npm:qs:20170213':
     - qs:
         reason: Test reason
-        expires: '2100-01-01T00:00:00.000Z'            
+        expires: '2100-01-01T00:00:00.000Z'
+# patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:mongoose:20160116':
     - mongoose:
         patched: '2016-10-24T10:50:51.980Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-05T02:06:03.016Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-05T02:06:03.016Z'
